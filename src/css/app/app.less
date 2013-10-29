@@ -1,0 +1,72 @@
+// Mixins
+
+.monospace {
+  font-family: 'Droid Sans Mono', monospace;
+  font-weight: normal;
+  letter-spacing: 0.5em;
+}
+
+// End Mixins
+
+body {
+  padding-bottom: 40px;
+}
+
+#keystream {
+  .monospace;
+}
+
+.impulses {
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  td {
+    .monospace;
+  }
+  .radio {
+    min-height: inherit;
+    margin: 0;
+  }
+}
+
+.show-matches {
+  .highlight {
+    color: crimson;
+  }
+  td {
+    color: #aaa;
+  }
+}
+
+.label-text {
+  font-weight: normal;
+  padding-right: 0;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label.cb {
+  padding-left: 20px;
+  height: 15px;
+  display: inline-block;
+  line-height: 15px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + label.cb {
+  background-position: 0 -15px;
+}
+
+.cb {
+  background-image:url(../img/cb.png);
+}
+
+.checkbox {
+  margin-left: 20px;
+}
