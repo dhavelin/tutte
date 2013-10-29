@@ -18,12 +18,6 @@
 
       <div class="row">
         <div class="col-md-12">
-          <h2>Key Stream</h2>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
           <div class="form-group">
             <h3>Key</h3>
             <textarea id="keystream" class="form-control" rows="6" ng-model="keyStream" spellcheck="false"></textarea>
@@ -34,131 +28,120 @@
       <div class="row">
 
         <div class="col-md-6">
-          <div class="container">
 
+          <div class="row">
             <div class="col-md-12">
               <h3>Choose an impulse</h3>
             </div>
-
-            <div class="col-md-12">
-              <div class="form-group">
-                <table class="table impulses">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th class="monospace">{{keyStream | limitTo:20}}...</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>
-                        <div class="radio">
-                          <label>
-                            <input type="radio" ng-model="useImpulse" value="i1"> Impulse 1
-                          </label>
-                        </div>
-                      </th>
-                      <td>{{impulses.i1 | limitTo:20}}...</td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <div class="radio">
-                          <label>
-                            <input type="radio" ng-model="useImpulse" value="i2"> Impulse 2
-                          </label>
-                        </div>
-                      </th>
-                      <td>{{impulses.i2 | limitTo:20}}...</td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <div class="radio">
-                          <label>
-                            <input type="radio" ng-model="useImpulse" value="i3"> Impulse 3
-                          </label>
-                        </div>
-                      </th>
-                      <td>{{impulses.i3 | limitTo:20}}...</td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <div class="radio">
-                          <label>
-                            <input type="radio" ng-model="useImpulse" value="i4"> Impulse 4
-                          </label>
-                        </div>
-                      </th>
-                      <td>{{impulses.i4 | limitTo:20}}...</td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <div class="radio">
-                          <label>
-                            <input type="radio" ng-model="useImpulse" value="i5"> Impulse 5
-                          </label>
-                        </div>
-                      </th>
-                      <td>{{impulses.i5 | limitTo:20}}...</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
           </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table impulses">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th class="monospace">{{keyStream | limitTo:20}}...</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" ng-model="useImpulse" value="i1"> Impulse 1
+                        </label>
+                      </div>
+                    </th>
+                    <td>{{impulses.i1 | limitTo:20}}...</td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" ng-model="useImpulse" value="i2"> Impulse 2
+                        </label>
+                      </div>
+                    </th>
+                    <td>{{impulses.i2 | limitTo:20}}...</td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" ng-model="useImpulse" value="i3"> Impulse 3
+                        </label>
+                      </div>
+                    </th>
+                    <td>{{impulses.i3 | limitTo:20}}...</td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" ng-model="useImpulse" value="i4"> Impulse 4
+                        </label>
+                      </div>
+                    </th>
+                    <td>{{impulses.i4 | limitTo:20}}...</td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" ng-model="useImpulse" value="i5"> Impulse 5
+                        </label>
+                      </div>
+                    </th>
+                    <td>{{impulses.i5 | limitTo:20}}...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
 
         <div class="col-md-6">
-          <div class="container">
+
+          <form class="form-horizontal" role="form">
 
             <div class="row">
-
-              <div class="col-md-12">
-               <h3>Plot as a table</h3>
-              </div>
-
+              <h3>Plot as a table</h3>
             </div>
 
-            <div class="row">
-
-              <div class="col-md-12">
-
-                <form class="form-horizontal" role="form">
-                  <div class="form-group">
-                    <label for="rowWidth" class="col-md-4 control-label label-text">Arrange in rows of width</label>
-                    <div class="col-md-4">
-                      <input type="number" class="form-control" id="rowWidth" ng-model="rowWidth">
-                    </div>
-                    <div class="col-md-4">
-                      <button class="btn btn-primary" ng-click="arrangeImpulse()">
-                        <span class="glyphicon glyphicon-refresh"></span> Refresh
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="col-md-12 control-label" style="text-align:left">Look for matches between rows</label>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="matchLength" class="col-md-4 control-label label-text">Minimum match length</label>
-                    <div class="col-md-4">
-                      <input type="number" class="form-control" id="matchLength" ng-model="matchLength">
-                    </div>
-                  </div>
-                </form>
-
+            <div class="form-group">
+              <label for="rowWidth" class="col-md-4 control-label label-text">Arrange in rows of width</label>
+              <div class="col-md-4">
+                <input type="number" class="form-control" id="rowWidth" ng-model="rowWidth">
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-primary" ng-click="arrangeImpulse()">
+                  <span class="glyphicon glyphicon-refresh"></span> Refresh
+                </button>
               </div>
             </div>
 
-          </div>
+            <div class="row">
+              <h3>Look for matches between rows</h3>
+            </div>
+
+            <div class="form-group">
+              <label for="matchLength" class="col-md-4 control-label label-text">Minimum match length</label>
+              <div class="col-md-4">
+                <input type="number" class="form-control" id="matchLength" ng-model="matchLength">
+              </div>
+            </div>
+
+          </form>
+
         </div>
 
       </div>
 
       <div class="row">
         <div class="col-md-12">
-          <h2>Look for repetitions</h2>
+          <h3>Result</h3>
         </div>
       </div>
 
